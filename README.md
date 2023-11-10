@@ -84,3 +84,20 @@
         The space is used for the recursive call stack.
         In the worst case, when the tree is skewed, the height h can be equal to n, making the space complexity O(n).
 
+5: Lexicographical NUmbers:
+    Algorithm used:
+        Initialize an empty list result to store the final result.
+        Initialize current to 1.
+        Loop from 1 to n, and at each iteration:
+        Append current to the result.
+        Move to the next lexicographical order:
+        If current * 10 is within the range [1, n], set current to current * 10.
+        Otherwise, increment current by 1.
+        If the last digit of current is 9, keep removing the last digit until a non-9 digit is found, then increment it by 1.
+        Return the final result.
+    Time complexity:
+        The time complexity is O(n), where n is the input integer.
+        Each number from 1 to n is processed once.
+    Space complexity:
+        The space complexity is O(1), as the additional space used is constant regardless of the input size.
+        The result list stores the final output, but its size is proportional to n, and it's not considered in the space complexity analysis.
