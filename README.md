@@ -44,4 +44,24 @@
         The space is used for the recursive call stack during in-order traversal.
         In the worst case, when the tree is skewed, the height h can be equal to n, making the space complexity O(n).
 
-        
+3: Shortest Path Visiting all Nodes: 
+    Algorithm used:
+        Initialization:
+        Initialize a 2D array dp of size (2^n) x n, where n is the number of nodes.
+        Each state in dp is represented by a bitmask, where each bit corresponds to whether a node is visited or not.
+        Initialize the base case: set the distance to infinity for all nodes and set the distance to 0 for the starting node.
+        Dynamic Programming with Bitmasking:
+        Iterate through all possible states (subsets of nodes) using a bitmask.
+        For each state, iterate through all nodes.
+        If a node is present in the current subset (bitmask), iterate through its neighbors.
+        Update the state by including the neighbor node, and update the distance based on the previous state.
+        Final State:
+        After iterating through all possible states, find the minimum distance among all final states (all nodes visited).
+    Time complexity: 
+        The time complexity is O(2^n * n^2), where n is the number of nodes in the graph.
+        Each state in dp is visited once, and for each state, we iterate through all nodes and their neighbors.
+    Space Complexity:
+        The space complexity is O(2^n * n).
+        The dp array has dimensions (2^n) x n, representing all possible states and nodes.
+
+
