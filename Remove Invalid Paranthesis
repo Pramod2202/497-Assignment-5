@@ -1,0 +1,47 @@
+def removeInvalidParentheses(s):
+    result = []
+    visited = set()
+    found = False
+
+    def is_valid(expr):
+        count = 0
+        for char in expr:
+            if char == '(':
+                count += 1
+            elif char == ')':
+                count -= 1
+                if count < 0:
+                    return False
+        return count == 0
+
+    queue = [s]
+    visited.add(s)
+
+    while queue:
+        current = queue.pop(0)
+
+        if is_valid(current):
+            result.append(current)
+            found = True
+
+        if found:
+            continue
+
+        for i in range(len(current)):
+            if current[i] in '()':
+                next_expr = current[:i] + current[i + 1:]
+                if next_expr not in visited:
+                    queue.append(next_expr)
+                    visited.add(next_expr)
+
+    return result
+
+# Example Usage:
+s1 = "()())()"
+print(removeInvalidParentheses(s1))
+
+s2 = "(a)())()"
+print(removeInvalidParentheses(s2))
+
+s3 = ")("
+print(removeInvalidParentheses(s3))
