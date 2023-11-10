@@ -64,4 +64,23 @@
         The space complexity is O(2^n * n).
         The dp array has dimensions (2^n) x n, representing all possible states and nodes.
 
+4: Binary Tree Maximum Path Sum:
+    Algorithm used: 
+        Recursive Helper Function (max_path_sum_helper):
+        The function takes a node as input.
+        If the node is None, return 0 (base case).
+        Calculate the maximum path sum for the left and right subtrees using recursion.
+        Update the max_sum variable by considering the current node and both subtrees.
+        Return the maximum path sum that goes through the current node.
+        Main Function (maxPathSum):
+        Initialize max_sum with negative infinity.
+        Call the recursive helper function with the root of the binary tree.
+        Return the final max_sum.
+    Time complexity:
+        The time complexity is O(n), where n is the number of nodes in the binary tree.
+        Each node is visited once during the recursive traversal.
+    Space Complexity:
+        The space complexity is O(h), where h is the height of the binary tree.
+        The space is used for the recursive call stack.
+        In the worst case, when the tree is skewed, the height h can be equal to n, making the space complexity O(n).
 
