@@ -24,3 +24,24 @@
         The time complexity is O(2^n), where n is the length of the input string.        
     Space Complexity:
         The space complexity is also O(2^n)
+
+2: Maximum Absolute Difference in BST:
+    Algorithm used: 
+        In-order Traversal Function (in_order_traversal):
+        Traverse the left subtree recursively.
+        Update the minimum difference if applicable by comparing the current node's value with the previously visited node's value.
+        Update the previously visited node.
+        Traverse the right subtree recursively.
+        Minimum Difference Function (getMinimumDifference):
+        Initialize variables prev to track the previously visited node and min_diff to store the minimum absolute difference (initialized to positive infinity).
+        Call the in_order_traversal function, starting from the root of the BST.
+        Return the final min_diff as the result.
+    Time Complexity: 
+        The time complexity is O(n), where n is the number of nodes in the BST.
+        Each node is visited once during the in-order traversal.
+    Space Complexity:
+        The space complexity is O(h), where h is the height of the BST.
+        The space is used for the recursive call stack during in-order traversal.
+        In the worst case, when the tree is skewed, the height h can be equal to n, making the space complexity O(n).
+
+        
